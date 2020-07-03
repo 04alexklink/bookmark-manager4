@@ -20,4 +20,9 @@ class Bookmark
     set_environment
     @connection.exec("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}') RETURNING id, url, title")
   end
+
+  def self.delete(id)
+    set_environment
+    @connection.exec("DELETE FROM bookmarks WHERE id = '#{id}'")
+  end
 end

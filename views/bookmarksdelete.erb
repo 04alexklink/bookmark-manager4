@@ -1,0 +1,6 @@
+<% @bookmarks.each do |bookmark| %>
+    <form action='/bookmarks/delete' method='post'>
+    <input type='text' name ="id" value = <%=bookmark.id%>>
+    <input type='submit' id='<%=bookmark.title%>' value='Delete <%=bookmark.title%>'>
+    </form>
+<% end %>
