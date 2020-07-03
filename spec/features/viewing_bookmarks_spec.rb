@@ -9,11 +9,11 @@ end
 
 feature 'Viewing bookmarks' do
   scenario 'A user is able to view bookmarks' do
-    Bookmark.add('http://www.makersacademy.com')
-    Bookmark.add('http://www.google.com')
+    Bookmark.add('http://www.makersacademy.com', "Makers")
+    Bookmark.add('http://www.google.com', "Google")
     
     visit '/bookmarks'
-    expect(page).to have_content 'http://www.makersacademy.com'
-    expect(page).to have_content 'http://www.google.com'
+    expect(page).to have_link('Makers', href: 'http://www.makersacademy.com')
+    expect(page).to have_link('Google', href: 'http://www.google.com')
   end
 end
