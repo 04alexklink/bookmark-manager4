@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 require 'pg'
+require 'web_helper'
 def setup_test_database
   p 'Setting up test database...'
 
-  @connection = PG.connect(dbname: 'bookmark_manager_test')
+  set_environment
 
   @connection.exec('TRUNCATE bookmarks;')
 end

@@ -18,6 +18,6 @@ class Bookmark
 
   def self.add(url, title)
     set_environment
-    @connection.exec("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}') RETURNING id, url, title" )
+    @connection.exec("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}') RETURNING id, url, title")
   end
 end
