@@ -1,0 +1,8 @@
+<% @bookmarks.each do |bookmark| %>
+    <form action='/bookmarks/update' method='post'>
+    <input type='text' id ='<%=bookmark.url%>url' name ="url" value = <%=bookmark.url%>>
+    <input type='text' id ='<%=bookmark.title%>title' name ="title" value = <%=bookmark.title%>>
+    <input type='hidden' name ="id" value = <%=bookmark.id%>>
+    <input type='submit' id='<%=bookmark.title%>' value='Update <%=bookmark.title%>'>
+    </form>
+<% end %>

@@ -25,4 +25,9 @@ class Bookmark
     set_environment
     @connection.exec("DELETE FROM bookmarks WHERE id = '#{id}'")
   end
+
+  def self.update(id, title, url)
+    set_environment
+    @connection.exec("UPDATE bookmarks SET title = '#{title}', url = '#{url}' WHERE id = '#{id}'")
+  end
 end
