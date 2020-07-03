@@ -24,4 +24,14 @@ describe Bookmark do
       expect(bookmarks.first.title).to eq("Makers")
     end
   end
+
+  describe '.delete' do
+    it 'deletes a bookmark from the database' do
+      Bookmark.add('http://www.makers.com', "Makers")
+      bookmarks_id = Bookmark.all.first.id
+      Bookmark.delete(bookmarks_id)
+      expect(Bookmark.all.count).to eq(0)
+    end
+  end
+
 end
